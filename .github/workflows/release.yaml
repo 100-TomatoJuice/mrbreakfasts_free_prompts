@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Package as zip
         run: |
-          zip -r ../${{ env.package }}.zip "Mr. Breakfast's Free Prompts" -x "Mr. Breakfast's Free Prompts"/meta\* "Mr. Breakfast's Free Prompts"/previews\* "Mr. Breakfast's Free Prompts"/.gitattributes\* 
+          zip -r ../${{ env.package }}.zip ../${{ env.package }} -x "Mr. Breakfast's Free Prompts"/meta\* "Mr. Breakfast's Free Prompts"/previews\* "Mr. Breakfast's Free Prompts"/.gitattributes\* 
 
       - name: Upload package to release
         if: ${{ env.add_binaries_to_github_release == 'true' }}
